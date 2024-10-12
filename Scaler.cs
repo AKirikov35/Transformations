@@ -2,19 +2,15 @@ using UnityEngine;
 
 public class Scaler : MonoBehaviour
 {
-    [SerializeField] private float _scaleSize;
-    [SerializeField] private float _scaleSpeed;
+    [SerializeField] private float _speed;
 
-    private float _defaultScaleSize = 1;
-
-    void Update()
+    private void Update()
     {
-        Scaled();
+        Scale();
     }
 
-    private void Scaled()
+    private void Scale()
     {
-        float newScale = Mathf.Lerp(_defaultScaleSize, _scaleSize, Mathf.PingPong(Time.time * _scaleSpeed, 1));
-        transform.localScale = new Vector3(newScale, newScale, newScale);
+        transform.localScale += Vector3.one * _speed * Time.deltaTime;
     }
 }
