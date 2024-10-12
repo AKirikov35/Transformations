@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Mover : MonoBehaviour
 {
-    [SerializeField] private float _movementSpeed;
+    [SerializeField] private float _speed;
 
     private void Update()
     {
@@ -11,6 +11,6 @@ public class Movement : MonoBehaviour
 
     private void Move()
     {
-        transform.Translate(0f, 0f, _movementSpeed * Time.deltaTime);
+        transform.Translate(0f, 0f, _speed * Time.deltaTime);
     }
 }
